@@ -1,11 +1,10 @@
-#include <stdio.h>
-#include 
+#include "main.h"
 /**
- * main - A program that prints a line with puts function
- * Return: 0 (success)
+ * _islower - checks for lowercase character
+ * @c: the character to check
+ * Return: 1 if c is lowercase, 0 otherwise
  */
-int main(void)
+int _islower(int c)
 {
-puts("\"Programming is like building a multilingual puzzle");
-return (0);
+	return (c >= 'a' && c <= 'z');
 }
