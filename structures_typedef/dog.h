@@ -8,21 +8,16 @@
  *
  * Description: Defines metadata about the dog and type of dog's struct
  */
-struct dog
+typedef struct dog
 {
   char *name;
   float age;
   char *owner;
-};
-typedef struct dog dog_t;
+} dog_t;
 /* Additional function prototypes */
 int _putchar(char c);
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
-init _strlen(char *s);
-char *strcpy(char *dest, char *src);
-
 #endif
-
