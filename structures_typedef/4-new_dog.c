@@ -9,12 +9,14 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-  int nlen, olen, i;
+int nlen, olen, i;
 dog_t *doggy;
 
 nlen = olen = 0;
-while (name[nlen++]);
-while (owner[olen++]);
+
+ while (name[nlen++]);
+
+ while (owner[olen++]);
 doggy = malloc(sizeof(dog_t));
 if (doggy == NULL)
 return (NULL);
