@@ -1,28 +1,44 @@
+ifndef VARIADIC_FUNCTIONS_H
+#define VARIADIC_FUNCTIONS_H
+
+ 
+
 /*
- * File: 0-sum_them_all.c
- * Auth: Brennan D Baraban
+ * File: variadic_functions.h
+ * Auth: Tshepo Monene
+ * Desc: Header file containing prototypes for all functions
+ *       used in the 0x0F-variadic_functions directory.
  */
 
-#include "variadic_functions.h"
+ 
+
 #include <stdarg.h>
 
+ 
+
+int sum_them_all(const unsigned int n, ...);
+void print_numbers(const char *separator, const unsigned int n, ...);
+void print_strings(const char *separator, const unsigned int n, ...);
+void print_all(const char * const format, ...);
+void _printchar(va_list list);
+void _printstr(va_list list);
+void _printfloat(va_list list);
+void _printint(va_list list);
+
+ 
+
 /**
- * sum_them_all - Returns the sum of all its paramters.
- * @n: The number of paramters passed to the function.
- * @...: A variable number of paramters to calculate the sum of.
- *
- * Return: If n == 0 - 0.
- *         Otherwise - the sum of all parameters.
+ * struct checker - A new struct type defining a checker.
+ * @type: A type representing a data type.
+ * @f: A function pointer to a function that check
+ *         a data type corresponding to type.
  */
-int sum_them_all(const unsigned int n, ...)
+
+ 
+
+typedef struct checker
 {
-va_list nums;
-unsigned int index, sum = 0;
-
-va_start(nums, n);
-
-for (index = 0; index < n; index++)
-sum += va_arg(nums, int);
-va_end(nums);
-return (sum);
-}
+  char *type;
+  void (*f)();
+} checker;
+#endif
